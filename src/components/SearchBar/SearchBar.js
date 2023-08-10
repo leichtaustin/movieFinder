@@ -39,7 +39,7 @@ export const SearchBar = () => {
         })
       }
     return (
-        <div>
+        <div data-testid="searchBar-1">
             <header>
                 <h1 id='introText'>Movie Library Search Engine</h1>
                 <p id='introText'>Enter a keyword into the search bar below and find a selection of related movies</p>

@@ -2,7 +2,9 @@ import './App.css';
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { SearchResults } from './components/SearchResults/SearchResults';
 
-function App() {
+
+
+const App = () => {
   return (
     <div className="App">
       <SearchBar />
