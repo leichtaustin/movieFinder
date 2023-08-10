@@ -25,13 +25,13 @@ export const MovieCard = (props) => {
         setExtraInfoToggle(true);
         setExtraInfo(addedInfo);
         console.log(extraInfo.Metascore)
-        document.getElementById('moreInfo').style.display = 'none';
+        document.getElementById(props.movie.imdbID).style.display = 'none';
         
     }
     const handleMinimize = (e) => {
         e.preventDefault();
         setExtraInfoToggle(false);
-        document.getElementById('moreInfo').style.display = 'block';
+        document.getElementById(props.movie.imdbID).style.display = 'block';
     }
 
     const handleAddToFavorites = (e) => {
@@ -57,12 +57,15 @@ export const MovieCard = (props) => {
                 <img src={props.movie.Poster} id='moviePoster' alt='movie poster'/>
             </div>
             <div className='movieButtons' id='movieButtons'>
-                <button id='moreInfo' onClick={getExtraInfo}>See more info</button>
+                <button id={props.movie.imdbID} onClick={getExtraInfo}>See more info</button>
                 {(favoriteStatus) ? (<button onClick={handleRemoveFromFavorites}>-</button>) : <button id='addToPlaylist' onClick={handleAddToFavorites}>+</button>}
             </div>
             <p>{extraInfoToggle ? (
-                <div>
-                    <p>{extraInfo.Metascore}</p>
+                <div className='extraInfo'>
+                    <p id='releaseDate'><strong>Release Date:</strong> {extraInfo.Released}</p>
+                    <p id='director'><strong>Director:</strong> {extraInfo.Director}</p>
+                    <p id='plot'>{extraInfo.Plot}</p>
+                    <p id='earnings'><strong>Box Office Earnings:</strong> {extraInfo.BoxOffice}</p>
                     <button onClick={handleMinimize}>Minimize Info</button>
                 </div>
 

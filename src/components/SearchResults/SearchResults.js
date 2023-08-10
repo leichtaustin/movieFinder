@@ -29,13 +29,16 @@ export const SearchResults = () => {
     }
    
     return (
-        <div className="searchResultsContainer">
-            {results.map(movie => {
-                return (
-                    <MovieCard movie = {movie} />
-                )
-            })}
+        <div>
+            <div className="searchResultsContainer">
+                {results.map(movie => {
+                    return (
+                        <MovieCard movie = {movie} />
+                    )
+                })}
+            </div>
             {(results.length === 0) ? null : (<button onMouseOver={getNextPage}>NextPage</button>)}
         </div>
+
     )
 }

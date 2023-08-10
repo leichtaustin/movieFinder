@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(./resources/background_movie.png);
+  background-size: cover;
+  background-repeat: repeat;
 }
 
 code {

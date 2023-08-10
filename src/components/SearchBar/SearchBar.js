@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectSearchTerm, updateSearchTerm } from './searchTermSlice';
 import { fetchMovieData } from '../api';
 import { clearSearchResults, updateSearchResults } from '../SearchResults/searchResultsSlice';
+import './searchBar.css';
 
 
 export const SearchBar = () => {
@@ -38,11 +39,15 @@ export const SearchBar = () => {
         })
       }
     return (
-        <div className='searchBarContainer'>
-            <form onSubmit={handleSubmit}>
-                <input type='text' id='movieSearch' onChange={onSearchChange}/>
-                <button type='submit'>Search</button>
-            </form>
+        <div>
+            <h1 id='introText'>Movie Library Search Engine</h1>
+            <p id='introText'>Enter a keyword into the search bar below and find a selection of related movies</p>
+            <div className='searchBarContainer'>
+                <form onSubmit={handleSubmit}>
+                    <input type='text' id='movieSearch' onChange={onSearchChange} maxLength={20}/>
+                    <button type='submit'>Search</button>
+                </form>
+            </div>
         </div>
     )
 }
