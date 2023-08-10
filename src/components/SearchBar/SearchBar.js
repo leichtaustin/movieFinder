@@ -40,8 +40,10 @@ export const SearchBar = () => {
       }
     return (
         <div>
-            <h1 id='introText'>Movie Library Search Engine</h1>
-            <p id='introText'>Enter a keyword into the search bar below and find a selection of related movies</p>
+            <header>
+                <h1 id='introText'>Movie Library Search Engine</h1>
+                <p id='introText'>Enter a keyword into the search bar below and find a selection of related movies</p>
+            </header>
             <div className='searchBarContainer'>
                 <form onSubmit={handleSubmit}>
                     <input type='text' id='movieSearch' onChange={onSearchChange} maxLength={20}/>
