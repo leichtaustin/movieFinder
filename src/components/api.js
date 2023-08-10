@@ -42,4 +42,5 @@ export const fetchNextPage = async (searchTerm, pageNumber) => {
     return jsonResponse;
 }
 
+
 // fetchMovieData("star");
