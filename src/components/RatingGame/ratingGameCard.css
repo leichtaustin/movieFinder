@@ -1,0 +1,36 @@
+/* .movieCardContainer {
+    display: block;
+    border: solid black 2px;
+    margin: 5px;
+    text-align: center;
+    width: 300px;
+}
+
+.movieInfoMain {
+    display: flex;
+    justify-content: space-between;
+
+}
+.basicData {
+    border: solid black 1px;
+    width: 70%;
+}
+
+.movieButtons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: .5rem;
+}
+
+#moreInfo {
+    margin-right: 1rem;
+}
+#addToPlaylist {
+    justify-self: end;
+}
+
+#moviePoster {
+    width: 100px;
+    height: auto;
+
+} */

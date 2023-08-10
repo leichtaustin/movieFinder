@@ -1,0 +1,10 @@
+.gamePromptContainer {
+    display: flex;
+    max-width: 50%;
+    margin: auto;
+    align-items: center;
+}
+
+#playButton {
+    margin-left: 3rem;
+}
