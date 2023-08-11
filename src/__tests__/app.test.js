@@ -22,3 +22,5 @@ test('render searchBar', () => {
     const searchBarElement = screen.getByTestId('searchBar-1');
     expect(searchBarElement).toBeInTheDocument();
 })
+
+
