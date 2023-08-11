@@ -5,20 +5,21 @@ import { fetchMovieData } from '../api';
 import { clearSearchResults, updateSearchResults } from '../SearchResults/searchResultsSlice';
 import './searchBar.css';
 
-
+//component for search bar and title text
 export const SearchBar = () => {
     
     const dispatch = useDispatch();
     const searchTerm = useSelector(selectSearchTerm);
     let searchResults; 
     
+    //capture text change in search bar
     const onSearchChange = (e) => {
         e.preventDefault();
         const userInput = e.target.value;
         dispatch(updateSearchTerm(userInput));
 
     }
-
+    //handle search bar submit
     const handleSubmit = async (e) => {
         e.preventDefault();
         if(searchTerm.length < 1) {

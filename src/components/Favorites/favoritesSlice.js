@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+//slice used to add movies to a favorites playlist
+
 export const favoritesSlice = createSlice({
     name: 'favorites',
     initialState: [],

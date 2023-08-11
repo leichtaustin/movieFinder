@@ -5,7 +5,7 @@ import { addToFavorites, removeFromFavorites } from '../Favorites/favoritesSlice
 import { useDispatch } from 'react-redux';
 
 
-
+//JS file to cover movieCoard component
 
 export const MovieCard = (props) => {
     let addedInfo;
@@ -14,6 +14,7 @@ export const MovieCard = (props) => {
     const [favoriteStatus, setFavoriteStatus] = useState(false);
     const dispatch = useDispatch();
 
+    //Toggle on screen to retrieve additional movie info from API and add to app
     const getExtraInfo = async (e) => {
         e.preventDefault();
         try {
@@ -28,6 +29,7 @@ export const MovieCard = (props) => {
         document.getElementById(props.movie.imdbID).style.display = 'none';
         
     }
+    //remove extra info function
     const handleMinimize = (e) => {
         e.preventDefault();
         setExtraInfoToggle(false);
