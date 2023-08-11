@@ -6,6 +6,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import { renderWithProviders } from '../utils/test-utils';
 import App from '../App';
 import { SearchBar } from '../components/SearchBar/SearchBar';
+import { SearchResults } from '../components/SearchResults/SearchResults';
 import { updateSearchTerm } from '../components/SearchBar/searchTermSlice';
 import { setupStore } from '../store';
 
@@ -22,5 +23,6 @@ test('render searchBar', () => {
     const searchBarElement = screen.getByTestId('searchBar-1');
     expect(searchBarElement).toBeInTheDocument();
 })
+
 
 
