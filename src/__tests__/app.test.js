@@ -7,8 +7,11 @@ import { renderWithProviders } from '../utils/test-utils';
 import App from '../App';
 import { SearchBar } from '../components/SearchBar/SearchBar';
 import { SearchResults } from '../components/SearchResults/SearchResults';
-import { updateSearchTerm } from '../components/SearchBar/searchTermSlice';
+import { selectSearchTerm, updateSearchTerm } from '../components/SearchBar/searchTermSlice';
 import { setupStore } from '../store';
+import searchTermSliceReducer from '../components/SearchBar/searchTermSlice';
+import { useSelector } from 'react-redux';
+import { fetchMovieData } from '../components/api';
 
 
 test('test', () => {
@@ -22,6 +25,26 @@ test('render searchBar', () => {
     renderWithProviders(<SearchBar />, { store })
     const searchBarElement = screen.getByTestId('searchBar-1');
     expect(searchBarElement).toBeInTheDocument();
+})
+
+describe('searchBarReducer', () => {
+    it('should return the initial state', () => {
+        const expected = '';
+
+        const result = searchTermSliceReducer(undefined, {});
+        expect(result).toEqual(expected);
+    });
+})
+
+it('should return a movie with data', async () => {
+    const expectedMovieData = {
+        Title: 'Star Wars: Episode IV - A New Hope',
+        Year: '1977'
+    }
+
+    const resultsArray = await fetchMovieData('star');
+
+    expect(resultsArray.Search[0].Title).toEqual(expectedMovieData.Title);
 })
 
 
